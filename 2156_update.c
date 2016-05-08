@@ -37,7 +37,8 @@ ll solve()
 		ll case1_dont_drink = d[i - 1];
 		ll case2_drink_1time = d[i - 2] + a[i]; // 1번연속마시려면 바로전에는 안마셔야함.
 		ll case3_drink_2time = d[i - 3] + a[i - 1] + a[i]; // 2번연속마시려면 i - 2에 안마시고, i - 1을 마시고, i도 마셔야함.
-															// i - 2를 빼려면 i - 3에 i - 1와 i를 더한다.
+							// i - 2를 빼려면 i - 3에 i - 1와 i를 더한다.
+							// NOTE: i - 1을 마신다는 의미는 d[i - 1]이 아니다.
 		d[i] = max3(case1_dont_drink, case2_drink_1time, case3_drink_2time);
 	}
 
